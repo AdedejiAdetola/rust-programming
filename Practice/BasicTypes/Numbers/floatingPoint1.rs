@@ -3,7 +3,7 @@
 fn main() {
     let x: f64 = 1_000.000_1; // ?
     let _y: f32 = 0.12; // f32
-    let _z: f64 = 0.01_f64; // f64
+    let _z: f64 = 0.01_f64; // f64 naturlich
 
     assert_eq!(type_of(&x), "f64".to_string());
     println!("Success!");

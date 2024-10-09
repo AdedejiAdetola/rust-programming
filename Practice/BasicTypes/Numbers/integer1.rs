@@ -20,7 +20,7 @@ fn main() {
     let mut y = 5; //removed u32 to make it work
 
     assert_eq!(5,y);
-
+// 
     y = x; //can't assign variable of a given type to another
     
     let z: i32 = 10; // Type of z ? //give z type of i32
@@ -29,3 +29,4 @@ fn main() {
 
     println!("Success!");
 }
+
