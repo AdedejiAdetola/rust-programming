@@ -2,7 +2,7 @@
 fn main() {
     let s = String::from("Hello World");
 
-    print_str(s);
+    print_str(s.clone());
 
     println!("{}", s);
 }

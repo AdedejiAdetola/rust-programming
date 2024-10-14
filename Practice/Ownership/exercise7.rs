@@ -1,8 +1,8 @@
 
 fn main() {
-    let x = Box::new(5);
+    let x: Box<i32> = Box::new(5);
     
-    let ...      // update this line, don't change other lines!
+    let mut y: Box<i32> = Box::new(1);     // update this line, don't change other lines!
     
     *y = 4;
     

@@ -3,7 +3,7 @@
 fn main() {
     let s = String::from("Hello ");
     
-    let s1 = s;
+    let mut s1 = s;
 
     s1.push_str("World!");
 
