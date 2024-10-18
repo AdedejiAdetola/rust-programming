@@ -198,6 +198,73 @@ fn main() {
     //then the copied method ensures that option returns i32 instead of reference to i32. Option<i32> instead of Option<&i32>,
     //the unwrap_or mimicks option by returning the necessary value or zero.
 
+    //HASHMAPS AND OWNERSHIP
+    
+    //use std::collections::HashMap;
+    //Values that implement the Copy trait are  copied into the hashmap
+    //Owned values like String are moved into the hashmap
+
+    // let field_name = String::from("Favorite Number?");
+    // let field_value = 6;
+
+    // let mut map = HashMap::new();
+    // map.insert(field_name, field_value);
+    // println!("{field_value}")
+    //field_value is valid because it implements the Copy trait 
+    // field_name is invalid at this point, try using them and
+    // see what compiler error you get!
+
+
+    //Updating a Hashmap
+    //three methods
+    //1 is overwriting the previous value
+
+    // use std::collections::HashMap;
+
+    // let mut scores = HashMap::new();
+
+    // scores.insert(String::from("Blue"), 10);
+    // scores.insert(String::from("Blue"), 25);
+
+    // println!("{scores:?}");
+
+    //2 - to check if the value exists first, else add a new value
+    // use std::collections::HashMap;
+
+    // let mut scores = HashMap::new();
+    // scores.insert(String::from("Blue"), 10);
+
+    // scores.entry(String::from("Yellow")).or_insert(50);
+    // scores.entry(String::from("Blue")).or_insert(60);
+
+    // println!("{scores:?}");
+
+    //.entry method also returns an enum type called Entry, this represents a value (value it takes in as a parameter in this case is a key) that might or might not exist. 
+   
+    //the interesting part is the .or_insert method called on Entry - this returns a mutable reference to the value for the Entry key if that key exists else it inserts the new value passed in and returns a mutable reference to that new value.
+
+    //3 -- Updating based on an old value
+    // use std::collections::HashMap;
+
+    // let text = "hello world wonderful world";
+
+    // let mut map = HashMap::new();
+
+    // for word in text.split_whitespace() {
+    //     let count = map.entry(word).or_insert(0);
+    //     *count += 1;
+    // }
+
+    // println!("{map:?}");
+
+    //we have seen how entry and or_insert works
+    //in the above example, we check the number of times "word" has been counted if it has been, else, we set count to 0 as it is the first time we are seeing count
+    //why do we use dereferencing? it is because of the nature of or_insert which returns a mutable reference to the corresponding value of word.
+
+
+
+
+
 
 
 
